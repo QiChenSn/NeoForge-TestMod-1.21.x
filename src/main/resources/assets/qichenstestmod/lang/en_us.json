@@ -1,3 +1,6 @@
 {
-  "item.qichenstestmod.yupai": "玉牌"
+  "item.qichenstestmod.yupai": "YuPai",
+  "block.qichenstestmod.xianglu": "XiangLu",
+  "block.qichenstestmod.nailong": "a piece of NaiLong",
+  "creativetab.qichenstestmod.all_tab": "王之宝库"
 }

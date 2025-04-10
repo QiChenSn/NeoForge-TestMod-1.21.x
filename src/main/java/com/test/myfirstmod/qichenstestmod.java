@@ -1,23 +1,16 @@
 package com.test.myfirstmod;
 
+import com.test.myfirstmod.Item.ModCreativeModeTabs;
 import com.test.myfirstmod.Item.ModItems;
+import com.test.myfirstmod.block.ModBlocks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -30,14 +23,10 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(ExampleMod.MODID)
-public class ExampleMod
+@Mod(qichenstestmod.MODID)
+public class qichenstestmod
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "qichenstestmod";
@@ -47,7 +36,7 @@ public class ExampleMod
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer)
+    public qichenstestmod(IEventBus modEventBus, ModContainer modContainer)
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -57,8 +46,10 @@ public class ExampleMod
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        //加载注册自定义物品
+        //注册自定义内容
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -85,6 +76,10 @@ public class ExampleMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.YUPAI);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.XIANGLU);
+            event.accept(ModBlocks.NAILONG);
         }
     }
 
