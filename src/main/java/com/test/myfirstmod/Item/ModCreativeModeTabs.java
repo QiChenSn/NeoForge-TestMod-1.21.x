@@ -28,6 +28,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.XIANGLU);
                         output.accept(ModBlocks.NAILONG);
                         output.accept(ModItems.YUPAI);
+                        output.accept(ModItems.NAILONG_FRAGMENT);
+                        output.accept(ModItems.NAILONG_MAKER);
     }).build());
 
     public static void register(IEventBus eventBus){

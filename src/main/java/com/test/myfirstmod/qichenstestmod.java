@@ -76,6 +76,8 @@ public class qichenstestmod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.YUPAI);
+            event.accept(ModItems.NAILONG_FRAGMENT);
+            event.accept(ModItems.NAILONG_MAKER);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.XIANGLU);
