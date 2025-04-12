@@ -16,6 +16,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> NAILONG_FRAGMENT= ITEMS.register("nailong_fragment",
             () -> new Item(new Item.Properties()));
+    //注意:使用自定义物品类时new的对象
     public static final DeferredItem<Item> NAILONG_MAKER= ITEMS.register("nailong_maker",
             () -> new NailongMakerItem(new Item.Properties().durability(99)));
     //注册方法,传递事件总线

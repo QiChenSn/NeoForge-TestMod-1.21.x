@@ -3,6 +3,7 @@ package com.test.myfirstmod;
 import com.test.myfirstmod.Item.ModCreativeModeTabs;
 import com.test.myfirstmod.Item.ModItems;
 import com.test.myfirstmod.block.ModBlocks;
+import com.test.myfirstmod.block.custom.NaiLongBlock;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -45,6 +46,8 @@ public class qichenstestmod
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        //注册监听事件
+        NeoForge.EVENT_BUS.register(NaiLongBlock.class);
 
         //注册自定义内容
         ModCreativeModeTabs.register(modEventBus);
@@ -74,15 +77,6 @@ public class qichenstestmod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.YUPAI);
-            event.accept(ModItems.NAILONG_FRAGMENT);
-            event.accept(ModItems.NAILONG_MAKER);
-        }
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.accept(ModBlocks.XIANGLU);
-            event.accept(ModBlocks.NAILONG);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -41,12 +41,12 @@ public class NailongMakerItem extends Item {
                 if(context.getPlayer().getItemInHand(interactionHand).getItem()==(ModItems.NAILONG_MAKER.get())){
                     Block.popResource(level,context.getClickedPos(), ModItems.NAILONG_FRAGMENT.toStack(1));
                     level.removeBlock(context.getClickedPos(),false);
+                    //消耗耐久值
+                    context.getItemInHand().hurtAndBreak(1,(ServerLevel) level,context.getPlayer(),
+                            item->context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                    //设置点击音效
+                    level.playSound(null,context.getClickedPos(), SoundEvents.VILLAGER_YES, SoundSource.BLOCKS);
                 }
-                //消耗耐久值
-                context.getItemInHand().hurtAndBreak(1,(ServerLevel) level,context.getPlayer(),
-                        item->context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-                //设置点击音效
-                level.playSound(null,context.getClickedPos(), SoundEvents.VILLAGER_YES, SoundSource.BLOCKS);
             }
         }
         //交互成功返回值
