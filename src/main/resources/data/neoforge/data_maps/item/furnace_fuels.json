@@ -1,0 +1,10 @@
+{
+  "values": {
+    "qichenstestmod:nailong_fragment": {
+      "burn_time": 200
+    },
+    "qichenstestmod:nailong": {
+      "burn_time": 1800
+    }
+  }
+}
