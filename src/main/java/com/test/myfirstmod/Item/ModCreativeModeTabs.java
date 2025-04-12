@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.YUPAI);
                         output.accept(ModItems.NAILONG_FRAGMENT);
                         output.accept(ModItems.NAILONG_MAKER);
+                        output.accept(ModItems.LONGKUAI);
     }).build());
 
     public static void register(IEventBus eventBus){

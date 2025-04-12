@@ -1,6 +1,7 @@
 package com.test.myfirstmod.block;
 
 import com.sun.jna.WString;
+import com.test.myfirstmod.Item.ModFoodProperties;
 import com.test.myfirstmod.Item.ModItems;
 import com.test.myfirstmod.qichenstestmod;
 import net.minecraft.world.item.BannerItem;

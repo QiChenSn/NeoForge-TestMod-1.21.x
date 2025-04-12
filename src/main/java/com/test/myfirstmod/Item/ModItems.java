@@ -19,6 +19,8 @@ public class ModItems {
     //注意:使用自定义物品类时new的对象
     public static final DeferredItem<Item> NAILONG_MAKER= ITEMS.register("nailong_maker",
             () -> new NailongMakerItem(new Item.Properties().durability(99)));
+    public static final DeferredItem<Item> LONGKUAI= ITEMS.register("longkuai",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.LONGKUAI)));
     //注册方法,传递事件总线
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
