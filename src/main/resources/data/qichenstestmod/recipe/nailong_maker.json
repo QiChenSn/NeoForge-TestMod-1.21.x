@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "GSG",
+    "SMS",
+    "GSG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qichenstestmod:nailong_maker"
+  }
+}
