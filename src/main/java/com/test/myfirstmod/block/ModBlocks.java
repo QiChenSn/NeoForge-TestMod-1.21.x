@@ -4,9 +4,8 @@ import com.sun.jna.WString;
 import com.test.myfirstmod.Item.ModFoodProperties;
 import com.test.myfirstmod.Item.ModItems;
 import com.test.myfirstmod.qichenstestmod;
-import net.minecraft.world.item.BannerItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,6 +14,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 //注册方块
@@ -32,7 +32,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> NAILONG=registerBlock("nailong",()->
             new Block(BlockBehaviour.Properties.of()
                     .strength(1f)
-                    .sound(SoundType.AMETHYST))
+                    .sound(SoundType.AMETHYST)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.qichenstestmod.nailong"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
     );
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){

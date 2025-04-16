@@ -5,5 +5,9 @@
   "item.qichenstestmod.longkuai": "奶龙肉干",
   "block.qichenstestmod.xianglu": "香炉",
   "block.qichenstestmod.nailong": "奶龙尸块",
-  "creativetab.qichenstestmod.all_tab": "奶龙"
+  "creativetab.qichenstestmod.all_tab": "奶龙",
+  "tooltip.qichenstestmod.nailong_fragment": "可作为燃料",
+  "tooltip.qichenstestmod.nailong_maker": "右键萤石使用",
+  "tooltip.qichenstestmod.longkuai": "可以食用",
+  "tooltip.qichenstestmod.nailong": "站在上方可获取奶龙碎片"
 }
