@@ -3,6 +3,7 @@ package com.test.myfirstmod.block;
 import com.sun.jna.WString;
 import com.test.myfirstmod.Item.ModFoodProperties;
 import com.test.myfirstmod.Item.ModItems;
+import com.test.myfirstmod.block.custom.XiangLuBlock;
 import com.test.myfirstmod.qichenstestmod;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -14,6 +15,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.plaf.nimbus.State;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -23,8 +25,9 @@ public class ModBlocks {
 
     //设置方块属性
     public static final DeferredBlock<Block> XIANGLU =registerBlock("xianglu",()->
-            new Block(BlockBehaviour.Properties.of()
+            new XiangLuBlock(BlockBehaviour.Properties.of()
                     .strength(4f)
+                    .lightLevel(state->state.getValue(XiangLuBlock.CLICKED)?15:0)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE))
     );
