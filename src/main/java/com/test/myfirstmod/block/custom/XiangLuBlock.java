@@ -29,6 +29,10 @@ public class XiangLuBlock extends Block {
         if(!level.isClientSide){
             boolean currentState =state.getValue(CLICKED);
             level.setBlockAndUpdate(pos,state.setValue(CLICKED,!currentState));
+            //TODO:实现显示粒子效果
+            if(state.getValue(CLICKED)){
+
+            }
         }
 
         return InteractionResult.SUCCESS;

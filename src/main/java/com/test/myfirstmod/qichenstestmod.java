@@ -4,6 +4,7 @@ import com.test.myfirstmod.Item.ModCreativeModeTabs;
 import com.test.myfirstmod.Item.ModItems;
 import com.test.myfirstmod.block.ModBlocks;
 import com.test.myfirstmod.block.custom.NaiLongBlock;
+import com.test.myfirstmod.component.ModDataComponents;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,6 +54,7 @@ public class qichenstestmod
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

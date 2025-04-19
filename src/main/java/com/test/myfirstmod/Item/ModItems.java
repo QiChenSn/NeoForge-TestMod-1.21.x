@@ -30,13 +30,7 @@ public class ModItems {
             });
     //注意:使用自定义物品类时new的对象
     public static final DeferredItem<Item> NAILONG_MAKER= ITEMS.register("nailong_maker",
-            () -> new NailongMakerItem(new Item.Properties().durability(99)){
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.qichenstestmod.nailong_maker"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-            });
+            () -> new NailongMakerItem(new Item.Properties().durability(99)));
     public static final DeferredItem<Item> LONGKUAI= ITEMS.register("longkuai",
             () -> new Item(new Item.Properties().food(ModFoodProperties.LONGKUAI)){
                 @Override
